@@ -5,13 +5,14 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
     overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .background-video {
@@ -20,24 +21,24 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; /* Отправляем видео на задний план */
+    z-index: -1;
     overflow: hidden;
 }
 
 #bg-video {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Видео будет подстраиваться под размеры экрана */
+    object-fit: cover;
 }
 
 .form-container {
-    background-color: rgba(0, 0, 0, 0.7); /* Полупрозрачный темный фон */
+    background-color: rgba(0, 0, 0, 0.7);
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     width: 100%;
     max-width: 400px;
-    backdrop-filter: blur(10px); /* Эффект размытия */
+    backdrop-filter: blur(10px);
     z-index: 1;
 }
 
@@ -58,33 +59,149 @@ label {
     font-weight: 500;
 }
 
-input, select {
-    padding: 12px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 16px;
-    background-color: #333;
+.nh-application-form__input {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     color: #fff;
+    cursor: pointer;
+    margin: 0;
+    padding: 0.825rem;
+    resize: vertical;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 20px;
+}
+
+.nh-application-form__input--round-2 {
+    border-radius: 0.5rem;
+}
+
+.nh-application-form__input:focus {
+    border-color: #49e2bb;
     outline: none;
+    background: rgba(255, 255, 255, 0.15);
 }
 
-input:focus, select:focus {
-    border-color: #007bff;
-    background-color: #444;
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; 
 }
 
+input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: none;
+}
+
+.custom-select-wrapper {
+    position: relative;
+    display: inline-block;
+    user-select: none;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.custom-select-wrapper select {
+    display: none;
+}
+
+.custom-select {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.custom-select-trigger {
+    position: relative;
+    display: block;
+    padding: 0 20px;
+    font-weight: 400;
+    color: #fff;
+    line-height: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.custom-select-trigger:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.custom-select-trigger:after {
+    position: absolute;
+    display: block;
+    content: '';
+    width: 10px;
+    height: 10px;
+    top: 45%;
+    right: 20px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+    border-right: 2px solid rgba(255, 255, 255, 0.5);
+    transform: translateY(-50%) rotate(45deg);
+    transform-origin: center;
+    transition: transform 0.35s ease-out;
+}
+
+.custom-select.opened .custom-select-trigger:after {
+    transform: translateY(-50%) rotate(-135deg);
+    top: 55%;
+}
+
+.custom-options {
+    position: absolute;
+    display: block;
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin: 10px 0;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 1);
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-15px);
+}
+
+.custom-select.opened .custom-options {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    transform: translateY(0);
+}
+
+.custom-option {
+    position: relative;
+    display: block;
+    padding: 0 20px;
+    font-weight: 400;
+    color: #fff;
+    line-height: 47px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.custom-option:hover,
+.custom-option.selection {
+    background-color: #49e2bb;
+    color: #000;
+}
+
+/* Стиль для кнопки отправки */
 button {
     padding: 12px;
-    background-color: #007bff;
-    color: white;
+    background-color: #49e2bb;
+    color: #000;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     font-size: 16px;
-    transition: background-color 0.3s ease;
+    font-weight: 500;
+    transition: all 0.3s ease;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #3bc5a0;
+    transform: translateY(-2px);
 }
