@@ -16,13 +16,20 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    height: 100vh;
+    min-height: 100vh; /* Позволяем прокрутку на мобильных */
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    overflow: hidden;
+    overflow-y: auto; /* Включаем прокрутку */
+    overflow-x: hidden; /* Отключаем горизонтальную прокрутку */
     background-color: rgba(0, 0, 0, 0.8);
+    -ms-overflow-style: none;  /* Убираем скроллбар для IE и Edge */
+    scrollbar-width: none;  /* Убираем скроллбар для Firefox */
+}
+
+body::-webkit-scrollbar {
+    display: none;  /* Убираем скроллбар для Chrome, Safari и Opera */
 }
 
 .background-video {
