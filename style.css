@@ -4,6 +4,16 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: 'ghoul';
+    src: local('ghoul'), url('fonts/ghoul.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'proxima_nova_bold';
+    src: local('proxima_nova_bold'), url('fonts/proxima_nova_bold.ttf') format('truetype');
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     height: 100vh;
@@ -29,6 +39,19 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 200px;
+    height: auto;
+    z-index: 2;
+    border-radius: 25px;
+    border-color: white;
+    border-width: 2px;
+    border-style: solid;
 }
 
 .form-container {
@@ -57,6 +80,11 @@ label {
     margin-bottom: 10px;
     color: #fff;
     font-weight: 500;
+    font-family: proxima_nova_bold;
+}
+
+input {
+    font-family: proxima_nova_bold;
 }
 
 .form-input {
@@ -156,7 +184,7 @@ input[type="number"] {
     width: 100%;
     margin: 10px 0;
     border-radius: 8px;
-    background: rgba(0, 0, 0, 1);
+    background: rgba(0, 0, 0, 0.99);
     transition: all 0.3s ease-in-out;
     opacity: 0;
     visibility: hidden;
@@ -169,6 +197,7 @@ input[type="number"] {
     visibility: visible;
     pointer-events: all;
     transform: translateY(0);
+    border-radius: 10px;
 }
 
 .custom-option {
@@ -179,11 +208,13 @@ input[type="number"] {
     color: #fff;
     line-height: 47px;
     cursor: pointer;
-    transition: all 0.2s ease-in-out;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
 }
 
 .custom-option:hover,
 .custom-option.selection {
+    border-radius: 10px;
     background-color: #49e2bb;
     color: #000;
 }
