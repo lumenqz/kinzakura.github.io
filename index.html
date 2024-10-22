@@ -1,45 +1,54 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Анкета</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <img src="logo.webp" alt="Logo" class="logo">
+    <div class="mobile-container">
+        <img src="logo.webp" alt="Logo" class="logo">
+
+        <div class="form-container">
+            <h1 style="font-family: ghoul;">ahketa</h1>
+            <form>
+                <label for="name">Как зовут?</label>
+                <input class="form-input form-input--rounded" type="text" id="name" name="name"
+                    placeholder="Введите ваше имя" autocomplete="off" required>
+
+                <label for="age">Сколько лет?</label>
+                <input class="form-input form-input--rounded" type="number" id="age" name="age" min="16" max="40"
+                    placeholder="Введите ваш возраст" autocomplete="off" required>
+
+                <label for="experience">Сколько играешь? (лет)</label>
+                <input class="form-input form-input--rounded" type="number" id="experience" name="experience"
+                    placeholder="Введите стаж игры" autocomplete="off" required>
+
+                <label for="skill">Как оцениваешь свой скилл?</label>
+                <select name="skill" id="skill" class="custom-select sources" placeholder="Выберите уровень">
+                    <option value="beginner">Новичок</option>
+                    <option value="intermediate">Средний</option>
+                    <option value="advanced">Продвинутый</option>
+                    <option value="expert">Эксперт</option>
+                </select>
+
+                <button type="submit">Отправить</button>
+            </form>
+        </div>
+    </div>
 
     <div class="background-video">
-        <video autoplay muted loop id="bg-video">
+        <video autoplay muted loop playsinline id="bg-video">
             <source src="video.mp4" type="video/mp4">
             Ваш браузер не поддерживает тег видео.
         </video>
-    </div>
-    <div class="form-container">
-        <h1 style="font-family: ghoul;">ahketa</h1>
-        <form>
-            <label for="name">Как зовут?</label>
-            <input class="form-input form-input--rounded" type="text" id="name" name="name" placeholder="Введите ваше имя" autocomplete="off" required>
-
-            <label for="age">Сколько лет?</label>
-            <input class="form-input form-input--rounded" type="number" id="age" name="age" min="16" max="40" placeholder="Введите ваш возраст" autocomplete="off" required>
-
-            <label for="experience">Сколько играешь? (лет)</label>
-            <input class="form-input form-input--rounded" type="number" id="experience" name="experience" placeholder="Введите стаж игры" autocomplete="off" required>
-
-            <label for="skill">Как оцениваешь свой скилл?</label>
-            <select name="skill" id="skill" class="custom-select sources" placeholder="Выберите уровень">
-                <option value="beginner">Новичок</option>
-                <option value="intermediate">Средний</option>
-                <option value="advanced">Продвинутый</option>
-                <option value="expert">Эксперт</option>
-            </select>
-
-            <button type="submit">Отправить</button>
-        </form>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
