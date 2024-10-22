@@ -59,7 +59,7 @@ label {
     font-weight: 500;
 }
 
-.nh-application-form__input {
+.form-input {
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
     color: #fff;
@@ -71,11 +71,11 @@ label {
     margin-bottom: 20px;
 }
 
-.nh-application-form__input--round-2 {
+.form-input--rounded {
     border-radius: 0.5rem;
 }
 
-.nh-application-form__input:focus {
+.form-input:focus {
     border-color: #49e2bb;
     outline: none;
     background: rgba(255, 255, 255, 0.15);
@@ -188,7 +188,6 @@ input[type="number"] {
     color: #000;
 }
 
-/* Стиль для кнопки отправки */
 button {
     padding: 12px;
     background-color: #49e2bb;
